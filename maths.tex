@@ -5,72 +5,107 @@
 
 \begin{document}
 \maketitle
-
+\section{Introduction à l'equation de Dyson}
+La fonction de Green peut etre ecrite a l'aide de l'equation de Dyson. 
+\begin{equation}
+	G = G_0 + G_0 \Sigma[G] G
+\end{equation}
+Avec $G$ la fonction de Green qui représente le système, $G_0$ le systeme a l'etat initial qui est mesure, et $\Sigma$ une fonctionnelle qui correspond a l'energie propre du systeme.
+$\Sigma$ s'ecrit :
+\begin{equation}
+	\Sigma[G] = \Sigma_{Hartree}[G] + \Sigma_{XC}[G]
+\end{equation}
+\begin{equation}
+	\Sigma_{Hartree}[G] = \int \rho(r) \frac{1}{\mid r - r'\mid }\mathrm{d}r' 
+\end{equation}
+avec $v_c$ qui correspond a l'interaction Coulombienne, $\rho(r)$ correspond a la densite electronique, et r et r' qui correspondent aux positions des particules en interaction.
+\begin{equation}
+	v_c =  \frac{1}{\mid r - r'\mid }
+\end{equation}
+\begin{equation}
+	\Sigma_{XC} = G \Gamma[G] v_c
+\end{equation}
+\begin{equation}
+	\Gamma[G] = 1 + G^2 \frac{\mathrm{d} \Sigma_{XC}[G]}{\mathrm{d}G} \Gamma[G]
+\end{equation}
+Cependant ces equations dependant de fonctionnelles de G elles sont trop compliquees a resoudre. Nous allons donc etudier le systeme en dimension spatio-temporelle nulle et renommer les variables comme suit pour plus de clarte.
+\begin{equation}
+	\Sigma \longrightarrow S
+\end{equation}
+\begin{equation}
+	G \longrightarrow y
+\end{equation}
+\begin{equation}
+	\Gamma \longrightarrow g
+\end{equation}
+\begin{equation}
+	v_c \longrightarrow u
+\end{equation}
 \section{Dyson}
 
 \begin{equation}
- y = y_0 + y_0 S(y) y
+	y = y_0 + y_0 S(y) y
 \end{equation}
 Et la solution 
 \begin{equation}
- Y = \frac{1}{V} \sqrt{1+2V} 
+	Y = \frac{1}{V} \sqrt{1+2V} 
 \end{equation}
 avec
 \begin{equation}
- V = uy_0^2
+	V = uy_0^2
 \end{equation}
 \begin{equation}
 \label{sigma}
- S(y) = S_{XC}(y) + S_{Hartree}(y)
+	S(y) = S_{XC}(y) + S_{Hartree}(y)
 \end{equation}
 \begin{equation}
 \label{Hartree} 
- S_{Hartree}(y) = -uy
+	S_{Hartree}(y) = -uy
 \end{equation}
 On étudie dans un premier temps $S_{XC}(y)$ 
 \begin{equation}
 \label{XC} 
- S_{XC}(y) = \frac{1}{2} u y g(y)
+	S_{XC}(y) = \frac{1}{2} u y g(y)
 \end{equation}
 \begin{equation} 
 \label{gamma} 
- g(y) = 1 + y^2 \frac{dS_{XC}(y)}{dy} g(y_0)
+	g(y) = 1 + y^2 \frac{dS_{XC}(y)}{dy} g(y_0)
 \end{equation}
 On combine les equations \ref{XC} et \ref{gamma} : 
 \begin{equation} 
 \label{XC_dev}
- S_{XC}(y) = \frac{1}{2} u y (1 + y^2 \frac{dS_{XC}(y)}{dy} g(y_0))
+	S_{XC}(y) = \frac{1}{2} u y (1 + y^2 \frac{dS_{XC}(y)}{dy} g(y_0))
 \end{equation}
 \begin{equation} 
 \label{XC_prime} 
- \frac{dS_{XC}(y)}{dy} = \frac{d(\frac{1}{2} u y g(y_0))}{y} = \frac{1}{2} u g(y_0)
+	\frac{dS_{XC}(y)}{dy} = \frac{d(\frac{1}{2} u y g(y_0))}{y} = \frac{1}{2} u g(y_0)
 \end{equation}
 Or $g(y_0) = 1$ ,donc on combine maintenant les equations \ref{XC_dev}  et \ref{XC_prime}.
 \begin{equation}
 \label{XC_final} 
- S_{XC}(y) = \frac{1}{2} u y + \frac{1}{4} u^2 y^3 
+	S_{XC}(y) = \frac{1}{2} u y + \frac{1}{4} u^2 y^3 
 \end{equation}
 On obtient donc avec \ref{sigma}: 
 \begin{equation}
 \label{Sigma_final} 
- S(y) = -uy +  \frac{1}{2} u y + \frac{1}{4} u^2 y^3 
+	S(y) = -uy +  \frac{1}{2} u y + \frac{1}{4} u^2 y^3 
 \end{equation}
-Finalement, on obtient l'équation suivante que l'on va chercher à simplifier afin de la resoudre.
+Finalement, on obtient l'equation suivante que l'on va chercher à simplifier afin de la resoudre.
 \begin{equation}
- y = -\frac{1}{2} u y_0 y^2 + \frac{1}{4} u^2 y_0 y^4 + y_0
+	y = -\frac{1}{2} u y_0 y^2 + \frac{1}{4} u^2 y_0 y^4 + y_0
 \end{equation}
 \begin{equation}
- \frac{1}{4} u^2 y_0 y^4 -\frac{1}{2} u y_0 y^2 - y + y_0 = 0
+	\frac{1}{4} u^2 y_0 y^4 -\frac{1}{2} u y_0 y^2 - y + y_0 = 0
 \end{equation}
-On multiplie l'équation précedente par $$4 \frac{1}{u^2 y_0}$$
+On multiplie l'equation précedente par $$ \frac{4}{u^2 y_0}$$
 On obtient : 
 \begin{equation}
- y^4 -\frac{2}{u} y^2 - \frac{4y}{y_0  u^2} + \frac{4}{u^2} = 0
+	y^4 -\frac{2}{u} y^2 - \frac{4y}{y_0  u^2} + \frac{4}{u^2} = 0
 \end{equation}
 Posons $$ U = \frac{2}{u}$$
 \begin{equation}
 \label{Dyson_final} 
- y^4 - U y^2 - U^2\frac{y}{y_0} + U^2 = 0
+	y^4 - U y^2 - U^2\frac{y}{y_0} + U^2 = 0
 \end{equation}
 Il faut donc maintenant resoudre \ref{Dyson_final}
 
