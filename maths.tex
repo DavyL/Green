@@ -211,12 +211,35 @@ d = \frac{U}{3} ( \sqrt[3]{35+\frac{u}{2y_0}(27 + \sqrt{A})}+\sqrt[3]{35+\frac{u
 e = f = \frac{U}{3} (\sqrt[3]{(35+\frac{u}{2y_0}(27 + \sqrt{A}))} + \sqrt[3]{(35+\frac{u}{2y_0}(27 - \sqrt{A}))} -1 )\\
 \end{array} \right.
 \end{equation}
-On a 
+Par ailleurs, on a :
 \begin{equation}
- \rho_1 = \sqrt{-e-f} = \sqrt{-2e}
+\left\{ \begin{array}{rl}
+\alpha + \beta + \gamma + \delta = 0 \\
+\alpha \beta + \gamma \delta = d \\
+\alpha \gamma + \beta \delta = e \\
+\alpha \delta + + \beta \gamma = f \\
+\end{array} \right.
+\Longleftrightarrow
+\left\{ \begin{array}{rl}
+\alpha + \beta + \gamma + \delta = 0 \\
+(\alpha + \beta )( \gamma + \delta ) = e+f \\
+(\alpha + \gamma)( \beta + \delta) = d +f \\
+(\alpha  + \delta)( \beta + \gamma) = d+e \\
+\end{array} \right.
+\end{equation}
+On d\'eduit ensuite des \'equations de ce syst\`eme :
+\newline
+$\alpha + \beta = \rho_1$ , $\gamma + \delta = -\rho_1 $ avec $\rho_1 = \sqrt{-e-f} $
+\newline
+$\alpha + \delta = \rho_2$ , $\beta + \gamma = -\rho_2$ avec $\rho_2 = \sqrt{-d -e}$
+\newline
+$\alpha + \gamma = \rho_3$ , $\beta + \delta = -\rho_3$ avec $\rho_3 = \sqrt{-d-f}$ 
+On a donc : 
+\begin{equation}
+ \rho_1 = \sqrt{-e-f} = \sqrt{-2e} = \sqrt{\frac{-2U}{3} (\sqrt[3]{(35+\frac{u}{2y_0}(27 + \sqrt{A}))} + \sqrt[3]{(35+\frac{u}{2y_0}(27 - \sqrt{A}))} -1 )}
 \end{equation}
 \begin{equation}
- \rho_2 = \sqrt{-d-e}
+ \rho_2 = \sqrt{-d-e} = \sqrt{\frac{-2U}{3} (\sqrt[3]{(35+\frac{u}{2y_0}(27 + \sqrt{A}))} + \sqrt[3]{(35+\frac{u}{2y_0}(27 - \sqrt{A})})}
 \end{equation}
 \begin{equation}
  \rho_3 = \sqrt{-d-f} = \sqrt{-d-e} = \rho_2
