@@ -206,6 +206,125 @@ Il faut donc maintenant r\'esoudre \ref{Dyson_final}
 %
 Afin de résoudre cette \'equation de degr\'e 4 nous allons utiliser la m\'ethode de Lagrange.
 \section{R\'esolution de l'\'equation de Dyson}
+\subsection{R\'esolution avec la m\'ethode g\'en\'erale nouvelle version}
+
+\begin{equation}
+\label{YFinal}
+ \frac{1}{4} V ^2 Y^4 - \frac{1}{2} V Y^2 -Y + 1 = 0
+\end{equation}
+Avec 
+\begin{equation}
+ V = u y_0^2
+\end{equation}
+Et 
+\begin{equation}
+ Y = \frac{y}{y_0}
+\end{equation}
+
+L'\'equation \ref{YFinal} peut s'\'ecrire :
+\begin{equation}
+ a y^4 + b y^3 + c y^2 + d y + e = 0
+\end{equation}
+Avec $a = \frac{1}{4}V^2$,$b = 0$, $c=\frac{-1}{2}V$, $d = -1$, $e=1$ .
+\newline
+On va donc calculer $\Delta$ afin d'identifier la forme des solutions.
+\begin{align*}
+\label{Delta}
+ \Delta = 256a^3 e^3 - 192 a^2bde^2 - 128 a^2 c^2 e^2 + 144a^2cd^2e - 27a^2d^4\\ 
+ + 144 ab^2ce^2 - 6ab^2d^2e - 80abc^2de + 18abcd^3 + 16ac^4e\\
+ -4ac^3d^2-27b^4e^2+18b^3cde - 4b^3d^3 - 4b^2c^3e+b^2c^2d^2
+ \end{align*}
+\begin{equation}
+ \Delta = 256a^3 e^3 - 128 a^2 c^2 e^2 + 144a^2cd^2e - 27a^2d^4 + 16ac^4e -4ac^3d^2
+\end{equation}
+
+\begin{equation}
+ \Delta = 2V^6 - 5V^5 - \frac{27}{16} V^4 + \frac{1}{8}V^6
+\end{equation}
+\begin{equation}
+\label{P}
+ P = 8ac - 3b^2 = -V^3
+\end{equation}
+\begin{equation}
+ \Delta_0 = c^2-3bd + 12ae = \frac{13}{4}V^2
+\end{equation}
+\begin{equation}
+ D = 64a^3e -16a^2c^2 + 16ab^2c - 16a^2bd -3b^4
+\end{equation}
+\begin{equation}
+\label{D}
+ D = V^6
+\end{equation}
+On fait l'hypoth\`ese que $\Delta > 0$ et d'apr\`es \ref{P} et \ref{D} on \`a $ D>0$ et $P>0$.
+On en d\'eduit donc qu'il y a deux paires de racines complexes conjugu\'ees non r\'eelles.
+
+\begin{equation}
+ p = \frac{8ac - 3b^2}{8a^2} = \frac{-2}{V}
+\end{equation}
+\begin{equation}
+ q = \frac{b^3 - 4abc + 8a^2d}{8a^3} = \frac{-4}{V^2}
+\end{equation}
+
+On obtient ensuite 
+\begin{equation}
+S = \frac{1}{2} \sqrt{\frac{-2}{3}p + \frac{1}{3}(Q + \frac{\Delta_0}{Q})}
+\end{equation}
+O\`u :
+\begin{equation}
+\label{Q}
+Q = \sqrt[3]{\frac{\Delta_1 + \sqrt{\Delta_1^2 - 4 \Delta_0^3}}{2}}
+\end{equation}
+Avec :
+\begin{equation}
+ \Delta_1 = 2c^3 - 9bcd + 27b^2e + 27ad^2 - 72ace = \frac{V^2}{4}(-V+27+36V) 
+\end{equation}
+\begin{equation}
+ \Delta_1 = \frac{V^2}{4}(35V +27)
+\end{equation}
+
+Or
+\begin{equation}
+ \Delta_1^2-4\Delta_0^3 = - 27\Delta
+\end{equation}
+On peut donc \'ecrire \ref{Q}
+\begin{equation}
+Q =  \sqrt[3]{\frac{\Delta_1+\sqrt{-27\Delta}}{2}}
+\end{equation}
+\begin{equation}
+ Q = \frac{1}{\sqrt[3]{2}}\sqrt[3]{V^2(\frac{V^6}{16}(35V^2+70*27*V+27^2) + \sqrt{-27(2V^2 -5V - \frac{27}{16} + \frac{1}{8}V^2)})}
+\end{equation}
+
+
+\begin{equation}
+ S = \frac{1}{2}\sqrt{\frac{4}{3V} + \frac{1}{3}(Q + \frac{\Delta_0}{Q}) }
+\end{equation}
+Finalement on obtient les diff\'erentes racines :
+\begin{equation}
+ y_{1,2,3,4} = \pm S \pm \frac{1}{2}\sqrt{-4S^2-2p+\frac{q}{S}}
+\end{equation}
+\begin{equation}
+ y_{1,2,3,4} = \pm S \pm \frac{1}{2}\sqrt{-4S^2+\frac{4}{V}-\frac{4}{V^2 S}}
+\end{equation}
+\begin{equation}
+\left\{ \begin{array}{rl}
+y_{1} = - S - \frac{1}{2}\sqrt{-4S^2+\frac{4}{V}-\frac{4}{V^2 S}}\\
+y_{2} = - S + \frac{1}{2}\sqrt{-4S^2+\frac{4}{V}-\frac{4}{V^2 S}}\\
+y_{3} = + S - \frac{1}{2}\sqrt{-4S^2+\frac{4}{V}-\frac{4}{V^2 S}}\\
+y_{4} = + S + \frac{1}{2}\sqrt{-4S^2+\frac{4}{V}-\frac{4}{V^2 S}}
+\end{array} \right.
+\end{equation} 
+
+ 
+
+
+
+
+
+
+
+
+
+
 \subsection{R\'esolution avec la m\'ethode g\'en\'erale}
 
 L'\'equation \ref{Dyson_final} peut s'\'ecrire :
