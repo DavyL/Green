@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb, graphics, setspace, breqn, graphicx}
 \title{Fonction de Green}
 \author{DAVY Leo, KAOUAH Mohammed, ABRIBAT Clement}
 
@@ -12,7 +12,7 @@ Cependant la pr\'ediction th\'eorique des spectres est tr\`es difficile \`a calc
  les bandes que l'on peut observer sur un spectre correspondent \`a un aper\c cu des niveaux d'\'energie de 
  l'ensemble des particules qui composent la mati\`ere \'etudi\'ee. Or la mati\`ere \'etant compos\'ee de particules fondamentales
   dont on connait les lois qui les r\'egissent d'une mani\`ere tr\`es efficace, ces lois correspondent au mod\`ele standard de la physique des particules.
-  Le mod\`eke standatd de la physique des particules correspond au regroupement de l'\'electrodynamique quantique, l'int\'eraction faible,
+  Le mod\`ele standard de la physique des particules correspond au regroupement de l'\'electrodynamique quantique, l'int\'eraction faible,
    l'int\'eraction \'electrofaible et la chromodynamique quantique ( int\'eraction forte ).
    \newline
    En l'\'etat de la physique il semble donc que l'on puisse pr\'edire un spectre de photo\'emission. 
@@ -33,16 +33,37 @@ un \'electron qui est envoy\'e dans de la mati\`ere puis un photon est \'emis de
 \newline
 L'int\'er\^et de la photo\'emission et de la photo\'emission inverse est que les photons ou \'el\'ectrons
 \'emis par la mati\'ere pourront \^etre mesur\'es. Les mesures de ces photons ou \'electrons nous renseigneront donc directement
-gr\^ace aux relations de la physique quantique, par exemple le fait que les paquets d'\'energie soient quantifi\'es de mani\'ere fixe,
-en connaissant l'\'energie des photons ou \'electrons \'emis on peut directement d\'eduire les niveaux d\'energie des particules de la mati\`ere sond\'ee.
+gr\^ace aux relations de la physique quantique, par exemple le fait que les paquets d'\'energie soient quantifi\'es de mani\`ere fixe,
+en connaissant l'\'energie des photons ou \'electrons \'emis on peut directement d\'eduire les niveaux d'\'energie des particules de la mati\`ere sond\'ee.
 
-\subsection{\'Etude br\`eve de l'eexpression formelle de la fonction de Green}
+\subsection{\'Etude br\`eve de l'expression formelle de la fonction de Green}
 Toutes les \'equations suivantes seront \'ecrites dans le syst\`eme d'unit\'e atomique.
 \begin{equation}
  \hbar = m = \frac{e^2}{4 \pi \epsilon_0} = 1
 \end{equation}
-On peut \'ecrire l'\'equation de Green de la mani\`ere suivante.
+On peut \'ecrire l'\'equation de Green de la mani\`ere suivante:
+/newline
+Psi étant trop compliqué à calculer on ne vas pas utiliser cette forme.
+\begin{equation}
+\label{kamoulox}
+ \langle \Psi_0 | T \Psi_H (r_1, t_1) \Psi_H (r_2, t_2) | \Psi_0 \rangle = G(\vec{r_1} t_1, \vec{r_2}  t_2)
+\end{equation}
+Avec $T$ la ``time-ordering function'' d\'efinie comme suit :
+\begin{equation}
+ T{A(r_1)B(r_2)} := \theta(t_1 - t_2)A(r_1)B(r_2) \pm \theta(t_2 - t_1)B(r_2) A(R_1)
+\end{equation}
+Avec $\theta$ la fonction de Heaviside d\'efinie comme suit :
 
+\begin{equation}
+\theta(t) = 
+\left\{ \begin{array}{rl}
+ 0 &\ \text{si }x <0\\
+ 1 &\ \text{si }x \geq 0
+
+\end{array} \right.
+\end{equation}
+Or les op\'erateurs $\Psi$ de l'\'equation \ref{kamoulox} \'etant trop compliqu\'es \`a calculer dans des syst\`emes r\'eels il est n\'ec\'essaires de simplifier la fonction de Green.
+Nous allons donc essayer de la simplifier tout en essayant de conserver un maximum de pr\'ecision dans le reste de ce rapport.
 \section{Introduction \`a l'equation de Dyson}
 La fonction de Green peut \^etre \'ecrite \`a l'aide de l'\'equation de Dyson. 
 \begin{equation}
@@ -56,7 +77,8 @@ $\Sigma$ s'\'ecrit :
 \begin{equation}
 	\Sigma_{Hartree}[G] = \int \rho(r) \frac{1}{\mid r - r'\mid }\mathrm{d}r' 
 \end{equation}
-avec $v_c$ qui correspond a l'int\'eraction Coulombienne, $\rho(r)$ correspond a la densit\'e \'electronique, et r et r' qui correspondent aux positions des particules en interaction.
+avec $v_c$ qui correspond au potentiel coulombien, $\rho(r)$ correspond a la densit\'e \'electronique, et $r-r'$
+qui correspond à l'int\'eraction coulombienne.
 \begin{equation}
 	v_c =  \frac{1}{\mid r - r'\mid }
 \end{equation}
@@ -66,7 +88,9 @@ avec $v_c$ qui correspond a l'int\'eraction Coulombienne, $\rho(r)$ correspond a
 \begin{equation}
 	\Gamma[G] = 1 + G^2 \frac{\mathrm{d} \Sigma_{XC}[G]}{\mathrm{d}G} \Gamma[G]
 \end{equation}
-Cependant ces \'equations dependant de fonctionnelles de G elles sont trop compliqu\'ees \`a r\'esoudre. Nous allons donc \'etudier le syst\`eme en dimension spatio-temporelle nulle et renommer les variables comme suit pour plus de clart\'e.
+Cependant ces \'equations dependant de fonctionnelles de G elles sont trop compliqu\'ees \`a r\'esoudre. 
+Nous allons donc \'etudier le syst\`eme en dimension spatio-temporelle nulle, c'est \`a dire dans un point, et renommer les variables comme suit
+pour plus de clart\'e.
 \begin{equation}
 	\Sigma \longrightarrow S
 \end{equation}
@@ -139,7 +163,7 @@ On obtient donc
 \begin{equation}
  Y_2 = \frac{-1 + 1 +\frac{1}{2}2V }{V} = \frac{V}{V} = 1
 \end{equation}
-Or, lorsque l'on fait tendre l'int\'eraction Coulombiennevers 0, c'est \`a dire que les \'electrons n'interagissent plus entre eux, alors ajouter ou enlever un \'electron au syst\`eme ne va pas modifier le syst\`eme. Donc on \`a $y_0 = y$, c'est à dire, $\frac{y_2}{y_0} = 1$.
+Or, lorsque l'on fait tendre le potentiel Coulombien vers 0, c'est \`a dire que les \'electrons n'interagissent plus entre eux, alors ajouter ou enlever un \'electron au syst\`eme ne va pas modifier le syst\`eme. Donc on \`a $y_0 = y$, c'est à dire, $\frac{y_2}{y_0} = 1$.
 On peut donc conclure que la solution physique de l'\'equation de Dyson est $Y_2$ lorsque $g^0(y) = 1$.
 \newline
 Cependant consid\'erer $g^0(y) = 1$ est une approximation, on va donc essayer de r\'esoudre l'\'equation de Dyson de mani\`ere plus pr\'ecise dans la section suivante
@@ -175,7 +199,7 @@ On combine les \'equations \ref{XC} et \ref{gamma} :
 \label{XC_prime} 
 	\frac{dS_{XC}(y)}{dy} = \frac{d(\frac{1}{2} u y )}{y} = \frac{1}{2} u 
 \end{equation}
-Or $g(y_0) = 1$ ,donc on combine maintenant les \'equations \ref{XC_dev}  et \ref{XC_prime}.
+Or $g(y_0) = 1$ ,donc on combine maintenant les \'equations \ref{XC_dev}  et \ref{XC_prime}.
 \begin{equation}
 \label{XC_final} 
 	S_{XC}(y) = \frac{1}{2} u y + \frac{1}{4} u^2 y^3 
@@ -314,7 +338,74 @@ y_{4} = + S + \frac{1}{2}\sqrt{-4S^2+\frac{4}{V}-\frac{4}{V^2 S}}
 \end{array} \right.
 \end{equation} 
 
+\subsection{R\'esolution avec Mathematica}
  
+Dans cette partie nous allons nous \'etudier la fonction de Green \`a l'aide du logiciel de calcul formel Mathematica.
+Tout d'abord nous pouvons v\'erifier les racines obtenues pr\'ecedemment pour l'\'equation \ref{YFinal}. Nous obtenons ainsi les r\'esultats suivants :
+\begin{dmath}
+Y_{1,2,3,4} \pm\frac{1}{2} \left(\frac{4}{3 V}+\frac{26}{3 \left(27 V^2+35 V^3+3 \sqrt{3} \sqrt{27 V^4+70 V^5-36 V^6}\right)^{1/3}}+\frac{2
+\left(27 V^2+35 V^3+3 \sqrt{3} \sqrt{27 V^4+70 V^5-36 V^6}\right)^{1/3}}{3 V^2}\right)^{\frac{1}{2}} \newline
+\pm\frac{1}{2} \left(\frac{8}{3 V}-\frac{26}{3 \left(27 V^2+35 V^3+3
+\sqrt{3} \sqrt{27 V^4+70 V^5-36 V^6}\right)^{1/3}}
+\newline
+-\frac{2 \left(27 V^2+35 V^3+3 \sqrt{3} \sqrt{27 V^4+70 V^5-36 V^6}\right)^{1/3}}{3 V^2}-
+\newline
+\frac{8}{V^2
+\sqrt{\frac{4}{3 V}+\frac{26}{3 \left(27 V^2+35 V^3+3 \sqrt{3} \sqrt{27 V^4+70 V^5-36 V^6}\right)^{1/3}}+\frac{2 \left(27 V^2+35 V^3+3 \sqrt{3} \sqrt{27
+V^4+70 V^5-36 V^6}\right)^{1/3}}{3 V^2}}}\right)^{\frac{1}{2}}
+\end{dmath}
+ Ces r\'esultats correspondent bien \`a ceux obtenus pr\'ecedemment nous allons donc chercher \'a obtenir la ( ou les ) solution(s) physiques.
+Nous allons proc\'eder de la m\^eme mani\`ere que avec $g^0(y)$. En effet nos racines correspondent \`a $Y = \frac{y}{y_0}$ donc lorsque
+le potentiel coulombien tend vers 0 alorson devrait avoir $Y\rightarrow1$.
+En calculant les limites \`a l'aide de Mathematica nous obtenons les r\'esultats suivant.
+\begin{alignat}{2}
+lim_{V->0} Y_1 &= - \infty - \infty \imath\\
+lim_{V->0} Y_2 &= - \infty + \infty \imath\\
+lim_{V->0} Y_3 &= 1\\
+lim_{V->0} Y_4 &= + \infty
+\end{alignat}
+On a donc deux solutions complexes et deux solutions r\'eelles comme on avait pu le d\'eterminer en calculant $\Delta$, $D$ et $P$, ce ne seront donc pas des solutions physiques
+\`a dl'\'equation de Dyson. Parmi les solutions r\'eelles on voit que $Y_3$ converge vers 1, c'est donc la solution physique du syst\`eme. 
+Afin d'\'etudier les r\'esultats de mani\`ere qualitative (Figure \ref{Sola}) nous allons maintenant \'etudier les repr\'esentations graphique des quatre solutions.
+
+\begin{figure}
+\caption{Trac\'e des quatre solutions, $Y_N = f_N(V)$}
+\includegraphics[width = \textwidth]{Courbes4.png}
+ \label{Sola}
+\end{figure}
+ On \`a $S_1$ en bleu, $S_2$ en orange, $S_3$ en vert et $S_4$ en rouge (Figure \ref{Sola}.
+ \newline
+On observe que les solutions complexes et r\'eelles sont sym\'etriques par rapport \`a l'axe des abscisses.
+\begin{figure}
+\caption{Trac\'e des deux solutions r\'eelles, $Y_N = f_N(V)$}
+\includegraphics[width = \textwidth]{Courbes2.png}
+ \label{Solb}
+\end{figure}
+
+Nous allons maintenant nous int\'eresser plus particuli\`erement aux solutions r\'elles (Figure \ref{solb}).
+\newline
+Nous pouvons ainsi constater que la 
+solution physique est quasiment constante et avec une pente faible, alors que la solution non physique a une pente plus importante et diverge en $+\infty$ lorsque
+$V\rightarrow0$.
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusion}
+En nous int\'eressant \`a la fonction de Green dans un point nous avons r\'esolu l'\'equation de Dyson par m\'ethode auto-coh\'erente. 
+N\'eanmoins, cette m\'ethode pr\'esente de nombreux inconv\'enients car comme nous l'avons remarqu\'e 
+nous ne faisons que nous rapprocher de la solution exacte de
+l'\'equation de Dyson en faisant plusieurs it\'erations, l'\'equation augmentant de degr\'e \`a chaque it\'eration. 
+Le probl\`eme est qu'il existe plusieurs solutions et qu'il peut \^etre difficile de d\'eterminer la solution physique. 
+Il appara\^it donc n\'ecessaire d'utiliser d'autres m\'ethodes afin d'\'etudier la fonction de Green.
 
 
 
@@ -572,3 +663,8 @@ On a donc $\alpha , \beta, \gamma,\delta$ qui sont les solutions de \ref{Dyson_f
 
 
 \end{document}    
+
+    Contact GitHub API Training Shop Blog About 
+
+    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
+
