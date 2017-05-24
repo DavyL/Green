@@ -1,8 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage{amsmath, amssymb, graphics, setspace, breqn, graphicx}
+
+
 \title{Fonction de Green}
 \author{DAVY Leo, KAOUAH Mohammed, ABRIBAT Clement}
-
 \begin{document}
 \maketitle
 \section{Photo-\'emission et fonction de Green}
@@ -42,8 +43,7 @@ Toutes les \'equations suivantes seront \'ecrites dans le syst\`eme d'unit\'e at
  \hbar = m = \frac{e^2}{4 \pi \epsilon_0} = 1
 \end{equation}
 On peut \'ecrire l'\'equation de Green de la mani\`ere suivante:
-/newline
-Psi étant trop compliqué à calculer on ne vas pas utiliser cette forme.
+
 \begin{equation}
 \label{kamoulox}
  \langle \Psi_0 | T \Psi_H (r_1, t_1) \Psi_H (r_2, t_2) | \Psi_0 \rangle = G(\vec{r_1} t_1, \vec{r_2}  t_2)
@@ -64,7 +64,8 @@ Avec $\theta$ la fonction de Heaviside d\'efinie comme suit :
 \end{equation}
 Or les op\'erateurs $\Psi$ de l'\'equation \ref{kamoulox} \'etant trop compliqu\'es \`a calculer dans des syst\`emes r\'eels il est n\'ec\'essaires de simplifier la fonction de Green.
 Nous allons donc essayer de la simplifier tout en essayant de conserver un maximum de pr\'ecision dans le reste de ce rapport.
-\section{Introduction \`a l'equation de Dyson}
+\section{Dyson}
+\subsection{Introduction \`a l'\'equation de Dyson}
 La fonction de Green peut \^etre \'ecrite \`a l'aide de l'\'equation de Dyson. 
 \begin{equation}
 	G = G_0 + G_0 \Sigma[G] G
@@ -103,7 +104,7 @@ pour plus de clart\'e.
 \begin{equation}
 	v_c \longrightarrow u
 \end{equation}
-\section{Dyson}
+
 Dans cette section nous allons \'etudier les solutions de l'\'equation suivante en fonction de $g(y)$
 \begin{equation}
 \label{dyson}
@@ -388,17 +389,6 @@ Nous pouvons ainsi constater que la
 solution physique est quasiment constante et avec une pente faible, alors que la solution non physique a une pente plus importante et diverge en $+\infty$ lorsque
 $V\rightarrow0$.
 
-
-
-
-
-
-
-
-
-
-
-
 \section{Conclusion}
 En nous int\'eressant \`a la fonction de Green dans un point nous avons r\'esolu l'\'equation de Dyson par m\'ethode auto-coh\'erente. 
 N\'eanmoins, cette m\'ethode pr\'esente de nombreux inconv\'enients car comme nous l'avons remarqu\'e 
@@ -406,6 +396,11 @@ nous ne faisons que nous rapprocher de la solution exacte de
 l'\'equation de Dyson en faisant plusieurs it\'erations, l'\'equation augmentant de degr\'e \`a chaque it\'eration. 
 Le probl\`eme est qu'il existe plusieurs solutions et qu'il peut \^etre difficile de d\'eterminer la solution physique. 
 Il appara\^it donc n\'ecessaire d'utiliser d'autres m\'ethodes afin d'\'etudier la fonction de Green.
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{maths}
+
+\end{document}
 
 
 
@@ -413,258 +408,4 @@ Il appara\^it donc n\'ecessaire d'utiliser d'autres m\'ethodes afin d'\'etudier 
 
 
 
-
-
-
-\subsection{R\'esolution avec la m\'ethode g\'en\'erale}
-
-L'\'equation \ref{Dyson_final} peut s'\'ecrire :
-\begin{equation}
- a y^4 + b y^3 + c y^2 + d y + e = 0
-\end{equation}
-Avec $a = 1$,$b = 0$, $c=-U$, $d = \frac{-U^2}{y_0}$, $e=U^2$ .
-On va donc calculer $\Delta$ afin d'identifier la forme des solutions.
-\begin{align*}
-\label{Delta}
- \Delta = 256a^3 e^3 - 192 a^2bde^2 - 128 a^2 c^2 e^2 + 144a^2cd^2e - 27a^2d^4\\ 
- + 144 ab^2ce^2 - 6ab^2d^2e - 80abc^2de + 18abcd^3 + 16ac^4e\\
- -4ac^3d^2-27b^4e^2+18b^3cde - 4b^3d^3 - 4b^2c^3e+b^2c^2d^2
- \end{align*}
-\begin{equation}
- \Delta = 256a^3 e^3 - 128 a^2 c^2 e^2 + 144a^2cd^2e - 27a^2d^4 + 16ac^4e -4ac^3d^2
-\end{equation}
-\begin{equation}
- \Delta = 256 U^6 -128 U^6 - \frac{144U^7}{y_0^2} - 27 \frac{U^8}{y_0^4} + 16 U^6 + 4 \frac{U^7}{y_0^2}
-\end{equation}
-\begin{equation}
- \Delta = U^6(144 - \frac{144U}{y_0^2} - 27 \frac{U^2}{y_0^4} + 4 \frac{U}{y_0^2})
-\end{equation}
-\begin{equation}
-\label{P}
- P = 8ac - 3b^2 = -8c = 8U
-\end{equation}
-\begin{equation}
- \Delta_0 = c^2-3bd + 12ae = U^2 +12U^2 = 13 U ^2
-\end{equation}
-\begin{equation}
- D = 64a^3e -16a^2c^2 + 16ab^2c - 16a^2bd -3b^4
-\end{equation}
-\begin{equation}
-\label{D}
- D = 64U^2 -16 U^2 = 48 U^2
-\end{equation}
-On fait l'hypoth\`ese que $\Delta > 0$ et d'apr\`es \ref{P} et \ref{D} on \`a $ D>0$ et $P>0$.
-On en d\'eduit donc qu'il y a deux paires de racines complexes conjugu\'ees non r\'eelles.
-
-\begin{equation}
- p = \frac{8ac - 3b^2}{8a^2} = c = -U
-\end{equation}
-\begin{equation}
- q = \frac{b^3 - 4abc + 8a^2d}{8a^3} = d = \frac{-U^2}{y_0}
-\end{equation}
-
-On obtient ensuite 
-\begin{equation}
-S = \frac{1}{2} \sqrt{\frac{-2}{3}p + \frac{1}{3}(Q + \frac{\Delta_0}{Q})}
-\end{equation}
-O\`u :
-\begin{equation}
-\label{Q}
-Q = \sqrt[3]{\frac{\Delta_1 + \sqrt{\Delta_1^2 - 4 \Delta_0^3}}{2}}
-\end{equation}
-Avec :
-\begin{equation}
- \Delta_1 = 2c^3 - 9bcd + 27b^2e + 27ad^2 - 72ace = -2U^3 + 27\frac{U^4}{y_0^2} + 72U^3 
-\end{equation}
-Or
-\begin{equation}
- \Delta_1^2-4\Delta_0^3 = - 27\Delta
-\end{equation}
-On peut donc \'ecrire \ref{Q}
-\begin{equation}
-Q =  \sqrt[3]{\frac{\Delta_1+\sqrt{-27\Delta}}{2}}
-\end{equation}
-\begin{equation}
-Q= \sqrt[3]{\frac{\Delta_1 + U^3\sqrt{-27 *(144 - \frac{144U}{y_0^2} - 27 \frac{U^2}{y_0^4} + 4 \frac{U}{y_0^2})}}{2}} 
-\end{equation}
-\begin{equation}
- Q= U\sqrt[3]{\frac{-2U + 27\frac{U}{y_0^2} + 72  + \sqrt{-27 *(144 - \frac{140U}{y_0^2} - 27 \frac{U^2}{y_0^4} )}}{2}} 
-\end{equation}
-\begin{equation}
- S = \frac{1}{2}\sqrt{\frac{2U}{3} + \frac{1}{3}(Q + \frac{\Delta_0}{Q}) }
-\end{equation}
-Finalement on obtient les diff\'erentes racines :
-\begin{equation}
- y_{1,2,3,4} = \pm S \pm \frac{1}{2}\sqrt{-4S^2-2p+\frac{q}{S}}
-\end{equation}
-\begin{equation}
- y_{1,2,3,4} = \pm S \pm \frac{1}{2}\sqrt{-4S^2+2U-\frac{U^2}{Sy_0}}
-\end{equation}
-\begin{equation}
-\left\{ \begin{array}{rl}
-y_{1} = - S - \frac{1}{2}\sqrt{-4S^2+2U-\frac{U^2}{Sy_0}}\\
-y_{2} = - S + \frac{1}{2}\sqrt{-4S^2+2U-\frac{U^2}{Sy_0}}\\
-y_{3} = + S - \frac{1}{2}\sqrt{-4S^2+2U-\frac{U^2}{Sy_0}}\\
-y_{4} = + S + \frac{1}{2}\sqrt{-4S^2+2U-\frac{U^2}{Sy_0}}
-\end{array} \right.
-\end{equation} 
-
-
-
-\subsection{R\'esolution avec la m\'ethode de Lagrange}
-Donc \ref{Dyson_final} est de la forme :
-\begin{equation}
-y^4 + a y^2 + b y + c 
-\end{equation}
-Avec $$a = -U$$ et $$b = -\frac{U^2}{y_0}$$ et $$c = u^2$$
-et on notera $\alpha, \beta, \gamma et \delta$ ses solutions. 
-On pose d, e et f les solutions de l'\'equation suivante : 
-\begin{equation}
-y^3 - a y^2 -4cy - b^2 + 4 ac = 0
-\end{equation}
-On cherche donc les solutions d'une equation du troisi\'eme degr\'e.
-On pose $$y = z - U/3$$
-On obtient donc l'\'equation :
-\begin{equation}
-(z - \frac{U}{3})^3  + U (z - \frac{U}{3})^2 - 4 U ^2(z - \frac{U}{3}) + \frac{U^2}{y_0} - 4U^3 = 0
-\end{equation}
-\begin{equation}
-z^3-z^2U+zU^2 - \frac{U^3}{27}+Uz^2-2\frac{zU^2}{3}+ \frac{U^3}{9} - 4U^2z+\frac{4}{3}U^3+\frac{U^2}{y_0}-4U^3 = 0
-\end{equation}
-
-\begin{equation}
-\label{deg3}
-z^3 - z\frac{11}{3}U^2 - u^3\frac{70}{27}+\frac{U^2}{y_0} = 0 
-\end{equation}
-On peut \'ecrire \ref{deg3} sous la forme :
-\begin{equation}
-z^3+pz+q = 0
-\end{equation}
-Avec $$p = -\frac{11}{3}U^2$$ et $$q = - u^3\frac{70}{27}+\frac{U^2}{y_0} $$
-On peut donc poser :
-\begin{equation}
-z^2+27qz - 27p^3 = 0 
-\end{equation}
-avec $z_{+}$ et $z_{-}$ les solutions de cette \'equation.
-On trouve donc $$\Delta = (27q)^2 + 4*27p^3$$
-\begin{equation}
-\Delta = \frac{U^5*70^2*y_0^2+ 140*27U^5+27^2U^4}{y_0^2} - 4*11^3U^6 
-\end{equation}
-On obtient donc :
-\begin{equation}
-z_+ = \frac{U^3 70 + \frac{27U^2}{y_0} +\sqrt{\Delta}}{2} 
-\end{equation}
-\begin{equation}
-z_- = \frac{U^3 70 + \frac{27U^2}{y_0} -\sqrt{\Delta}}{2}  
-\end{equation}
-On a aussi
-\begin{equation}
- \sqrt{\Delta} = \sqrt{\frac{U^5*70^2*y_0^2+ 140*27U^5+27^2U^4}{y_0^2} - 4*11^3U^6 }
-\end{equation}
-
-\begin{equation}
- \sqrt{\Delta} = \frac{U^2}{y_0} \sqrt{U*70^2*y_0^2+ 140*27U+27^2 -4*11^3*U^2*y_0^2} = \frac{U^2}{y_0} \sqrt{A}
-\end{equation}
-
-On pose maintenant $k$ (respectivement $l$ ) comme \'etant la racine cubique de $z_+$ ( respectivement $z_-$ ).
- Avec $j = e^{i\frac{2\pi}{3}}$
-\begin{equation}
-\left\{ \begin{array}{rl}
-d = \frac{1}{3} ( k + l + U)\\
-e = \frac{1}{3} (kj^2 + lj + U)\\
-f = \frac{1}{3} (kj + lj^2 + U)
-\end{array} \right.
-\end{equation} 
-
-
-\begin{equation}
-\left\{ \begin{array}{rl}
-d = \frac{U}{3} ( \sqrt[3]{35+\frac{u}{2y_0}(27 + \sqrt{A})}+\sqrt[3]{35+\frac{u}{2y_0}(27 - \sqrt{A})} + 1)\\
-e = \frac{U}{3} (\sqrt[3]{35+\frac{u}{2y_0}(27 + \sqrt{A})} e^{i\frac{4\pi}{3}}  +   \sqrt[3]{35+\frac{u}{2y_0}(27 - \sqrt{A})}e^{i \frac{2\pi}{3}} 
-+ e^{i\frac{4\pi}{3}} + e^{i\frac{2\pi}{3}} )\\
-f = \frac{U}{3} (\sqrt[3]{35+\frac{u}{2y_0}(27 + \sqrt{A})} e^{i\frac{2\pi}{3}}  +   \sqrt[3]{35+\frac{u}{2y_0}(27 - \sqrt{A})}e^{i \frac{4\pi}{3}} 
-+ e^{i\frac{2\pi}{3}} + e^{i\frac{4\pi}{3}} )\\
-\end{array} \right.
-\end{equation}
-
-
-\begin{equation}
-\left\{ \begin{array}{rl}
-d = \frac{U}{3} ( \sqrt[3]{35+\frac{u}{2y_0}(27 + \sqrt{A})}+\sqrt[3]{35+\frac{u}{2y_0}(27 - \sqrt{A})} + 1)\\
-e = \frac{U}{3} (((35+\frac{u}{2y_0}(27 + \sqrt{A})) e^{i4\pi})^{\frac{1}{3}} + ((35+\frac{u}{2y_0}(27 - \sqrt{A})))e^{i 2\pi})^{\frac{1}{3}}
-+ e^{i\frac{4\pi}{3}} + e^{i\frac{2\pi}{3}} )\\
-f = \frac{U}{3} (((35+\frac{u}{2y_0}(27 + \sqrt{A})) e^{i2\pi})^{\frac{1}{3}} + ((35+\frac{u}{2y_0}(27 - \sqrt{A}))e^{i 4\pi})^{\frac{1}{3}} 
-+ e^{i\frac{2\pi}{3}} + e^{i\frac{4\pi}{3}} )\\
-\end{array} \right.
-\end{equation}
-Or
-\begin{equation}
- e^{i4\pi} = e^{i2\pi} = 1
-\end{equation}
-Et
-\begin{equation}
- j^2+j= e^{i\frac{4\pi}{3}} + e^{i\frac{2\pi}{3}} = -1
-\end{equation}
-
-\begin{equation}
-\left\{ \begin{array}{rl}
-d = \frac{U}{3} ( \sqrt[3]{35+\frac{u}{2y_0}(27 + \sqrt{A})}+\sqrt[3]{35+\frac{u}{2y_0}(27 - \sqrt{A})} + 1)\\
-e = f = \frac{U}{3} (\sqrt[3]{(35+\frac{u}{2y_0}(27 + \sqrt{A}))} + \sqrt[3]{(35+\frac{u}{2y_0}(27 - \sqrt{A}))} -1 )\\
-\end{array} \right.
-\end{equation}
-Par ailleurs, on a :
-\begin{equation}
-\left\{ \begin{array}{rl}
-\alpha + \beta + \gamma + \delta = 0 \\
-\alpha \beta + \gamma \delta = d \\
-\alpha \gamma + \beta \delta = e \\
-\alpha \delta + + \beta \gamma = f \\
-\end{array} \right.
-\Longleftrightarrow
-\left\{ \begin{array}{rl}
-\alpha + \beta + \gamma + \delta = 0 \\
-(\alpha + \beta )( \gamma + \delta ) = e+f \\
-(\alpha + \gamma)( \beta + \delta) = d +f \\
-(\alpha  + \delta)( \beta + \gamma) = d+e \\
-\end{array} \right.
-\end{equation}
-On d\'eduit ensuite des \'equations de ce syst\`eme :
-\newline
-$\alpha + \beta = \rho_1$ , $\gamma + \delta = -\rho_1 $ avec $\rho_1 = \sqrt{-e-f} $
-\newline
-$\alpha + \delta = \rho_2$ , $\beta + \gamma = -\rho_2$ avec $\rho_2 = \sqrt{-d -e}$
-\newline
-$\alpha + \gamma = \rho_3$ , $\beta + \delta = -\rho_3$ avec $\rho_3 = \sqrt{-d-f}$ 
-On a donc : 
-\begin{equation}
- \rho_1 = \sqrt{-e-f} = \sqrt{-2e} = \sqrt{\frac{-2U}{3} (\sqrt[3]{(35+\frac{u}{2y_0}(27 + \sqrt{A}))} + \sqrt[3]{(35+\frac{u}{2y_0}(27 - \sqrt{A}))} -1 )}
-\end{equation}
-\begin{equation}
- \rho_2 = \sqrt{-d-e} = \sqrt{\frac{-2U}{3} (\sqrt[3]{(35+\frac{u}{2y_0}(27 + \sqrt{A}))} + \sqrt[3]{(35+\frac{u}{2y_0}(27 - \sqrt{A})})}
-\end{equation}
-\begin{equation}
- \rho_3 = \sqrt{-d-f} = \sqrt{-d-e} = \rho_2
-\end{equation}
-On d\'eduit maintenant:
-\begin{equation}
- \alpha = \frac{1}{2}(\rho_1 + \rho_2 + \rho_3) = \frac{1}{2}(\rho_1 + 2\rho_2)
-\end{equation}
-\begin{equation}
-  \beta = \frac{1}{2}(\rho_1 - \rho_2 - \rho_3) = \frac{1}{2}(\rho_1 - 2\rho_2)
-\end{equation}
-\begin{equation}
- \gamma = \frac{1}{2}(-\rho_1 - \rho_2 + \rho_3) = \frac{1}{2}(-\rho_1)
-\end{equation}
-\begin{equation}
-  \delta = \frac{1}{2}(-\rho_1 + \rho_2 - \rho_3) = \gamma
-\end{equation}
-On a donc $\alpha , \beta, \gamma,\delta$ qui sont les solutions de \ref{Dyson_final}.
-
-
-
-\end{document}    
-
-    Contact GitHub API Training Shop Blog About 
-
-    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
 
