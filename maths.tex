@@ -32,9 +32,9 @@ On peut se repr\'esenter la photo\'emission comme \'etant un photon qui est envo
 cette mati\`ere va donc \'ejecter un \'electron. La photo\'emission inverse est tr\`es similaire, elle correspond \`a
 un \'electron qui est envoy\'e dans de la mati\`ere puis un photon est \'emis depuis cette mati\`ere.
 \begin{figure}
-\caption{Sch\'ema de  la photoemission et de la photo\'mission inverse}
 \includegraphics[width = \textwidth]{photoem.jpg}
- \label{Solb}
+ \label{photoEm}
+\caption{Sch\'ema de  la photoemission et de la photo\'mission inverse}
 \end{figure}
 L'int\'er\^et de la photo\'emission et de la photo\'emission inverse est que les photons ou \'el\'ectrons
 \'emis par la mati\'ere pourront \^etre mesur\'es. Les mesures de ces photons ou \'electrons nous renseigneront donc directement
@@ -223,22 +223,12 @@ Finalement, on obtient l'\'equation suivante que l'on va chercher \`a simplifier
 \begin{equation}
 	\frac{1}{4} u^2 y_0 y^4 -\frac{1}{2} u y_0 y^2 - y + y_0 = 0
 \end{equation}
-On multiplie l'\'equation pr\'ecedente par $$ \frac{4}{u^2 y_0}$$
-On obtient : 
-\begin{equation}
-	y^4 -\frac{2}{u} y^2 - \frac{4y}{y_0  u^2} + \frac{4}{u^2} = 0
-\end{equation}
-Posons $$ U = \frac{2}{u}$$
-\begin{equation}
-\label{Dyson_final} 
-	y^4 - U y^2 - U^2\frac{y}{y_0} + U^2 = 0
-\end{equation}
+
 Il faut donc maintenant r\'esoudre \ref{Dyson_final}
 %
-Afin de résoudre cette \'equation de degr\'e 4 nous allons utiliser la m\'ethode de Lagrange.
 \section{R\'esolution de l'\'equation de Dyson}
-\subsection{R\'esolution avec la m\'ethode g\'en\'erale nouvelle version}
-
+\subsection{R\'esolution avec la m\'ethode g\'en\'erale}
+Afin de r\'esoudre (\ref{YFinal}) nous allons utiliser la m\'ethode g\'en\'erale \footnote{quartic}.
 \begin{equation}
 \label{YFinal}
  \frac{1}{4} V ^2 Y^4 - \frac{1}{2} V Y^2 -Y + 1 = 0
