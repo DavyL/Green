@@ -1,8 +1,10 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath, amssymb, graphics, setspace, breqn, graphicx, biblatex}
+\usepackage{amsmath, amssymb, graphics, setspace, breqn, graphicx}
+\usepackage[style=numeric]{biblatex}
+ 
+\addbibresource{maths}
 
-
-\title{Fonction de Green}
+\title{Approximation de la fonction de Green par m\'ethode autocoh\'erente}
 \author{DAVY Leo, KAOUAH Mohammed, ABRIBAT Cl\'ement\\ 
 Tuteur : A.J. Berger\\
 \small L1 Parcours Sp\'ecial, Universit\'e Paul Sabatier, Toulouse}
@@ -36,7 +38,7 @@ un \'electron qui est envoy\'e dans de la mati\`ere puis un photon est \'emis de
 \begin{figure}
 \includegraphics[width = \textwidth]{photoem.jpg}
  \label{photoEm}
-\caption{Sch\'ema de  la photoemission et de la photo\'mission inverse}
+\caption{Sch\'ema de  la photoemission et de la photo\'mission inverse \cite{these}}
 \end{figure}
 L'int\'er\^et de la photo\'emission et de la photo\'emission inverse est que les photons ou \'el\'ectrons
 \'emis par la mati\'ere pourront \^etre mesur\'es. Les mesures de ces photons ou \'electrons nous renseigneront donc directement
@@ -245,7 +247,7 @@ Il faut donc maintenant r\'esoudre \ref{Dyson_final}
 %
 \section{R\'esolution de l'\'equation de Dyson}
 \subsection{R\'esolution avec la m\'ethode g\'en\'erale}
-Afin de r\'esoudre (\ref{YFinal}) nous allons utiliser la m\'ethode g\'en\'erale \footnote{quartic}.
+Afin de r\'esoudre (\ref{YFinal}) nous allons utiliser la m\'ethode g\'en\'erale \cite{quartic}.
 \begin{equation}
 \label{YFinal}
  \frac{1}{4} V ^2 Y^4 - \frac{1}{2} V Y^2 -Y + 1 = 0
@@ -393,10 +395,10 @@ On observe que les solutions complexes et r\'eelles sont sym\'etriques par rappo
 \begin{figure}
 \caption{Trac\'e des deux solutions r\'eelles, $Y_N = f_N(V)$}
 \includegraphics[width = \textwidth]{Courbes2.png}
- \label{Solb}
+\label{solb}
 \end{figure}
 
-Nous allons maintenant nous int\'eresser plus particuli\`erement aux solutions r\'elles (Figure \ref{solb}).
+Nous allons maintenant nous int\'eresser plus particuli\`erement aux solutions r\'elles (Figure \ref{solb} ).
 \newline
 Nous pouvons ainsi constater que la 
 solution physique est quasiment constante et avec une pente faible, alors que la solution non physique a une pente plus importante et diverge en $+\infty$ lorsque
@@ -408,10 +410,10 @@ N\'eanmoins, cette m\'ethode pr\'esente de nombreux inconv\'enients car comme no
 nous ne faisons que nous rapprocher de la solution exacte de
 l'\'equation de Dyson en faisant plusieurs it\'erations, l'\'equation augmentant de degr\'e \`a chaque it\'eration. 
 Le probl\`eme est qu'il existe plusieurs solutions et qu'il peut \^etre difficile de d\'eterminer la solution physique. 
-Il appara\^it donc n\'ecessaire d'utiliser d'autres m\'ethodes afin d'\'etudier la fonction de Green.
+Il appara\^it donc n\'ecessaire d'utiliser d'autres m\'ethodes afin d'\'etudier la fonction de Green. 
 \nocite{*}
-\bibliographystyle{plain}
-\bibliography{maths}
+
+\printbibliography
 
 \end{document}
 
