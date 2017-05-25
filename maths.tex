@@ -72,6 +72,7 @@ La fonction de Green peut \^etre \'ecrite \`a l'aide de l'\'equation de Dyson.
 	G = G_0 + G_0 \Sigma[G] G
 \end{equation}
 Avec $G$ la fonction de Green qui repr\'esente le syst\`eme, $G_0$ le syst\`eme a l'\'etat initial qui est mesur\'e, et $\Sigma$ une fonctionnelle qui correspond a l'\'energie propre du syst\`eme.
+Ici le l'inconv\'enient  est que nous avons une \'equation non lin\'eaire et donc au moins de degré deux, nous rajoutons donc des solutions autre que la solution que nous cherchons
 $\Sigma$ s'\'ecrit :
 \begin{equation}
 	\Sigma[G] = \Sigma_{Hartree}[G] + \Sigma_{XC}[G]
@@ -112,7 +113,7 @@ Dans cette section nous allons \'etudier les solutions de l'\'equation suivante 
 	y = y_0 + y_0 S(y) y
 \end{equation}
 \subsection{\'Etude de l'\'equation de Dyson avec $g^0(y)$}
-On d\'efinit :
+On approxime $g^0$ qui correspond au g de la première it\ération  pour simplifier les calculs de manière \`a ce que :
 \begin{equation}
  g^0(y) = 1
 \end{equation}
@@ -126,7 +127,7 @@ D'o\`u:
 \begin{equation}
  S_{XC}(y) = \frac{1}{2} u y g^0(y) = \frac{1}{2} u y
 \end{equation}
-\ref{dyson} devient donc :
+(\ref{dyson}) devient donc :
 \begin{equation}
  y = y_0 + y_0 (\frac{-1}{2} u y) y
 \end{equation}
@@ -145,7 +146,7 @@ Et
 \begin{equation}
  y_2 = \frac{1 - \sqrt{1 + 2 u y_0^2}}{- u y_0}
 \end{equation}
-On peut r\'e\'ecrire les solutions pr\'ecedentes de la mani\`eresuivante:
+On peut r\'e\'ecrire les solutions pr\'ecedentes de la mani\`ere suivante:
 \begin{equation}
  y_1/y_0 = Y_1 = \frac{-1-\sqrt{1 + 2 V}}{V}
 \end{equation}
@@ -153,7 +154,7 @@ Et
 \begin{equation}
  y_2/y_0 = Y_2 = \frac{-1 + \sqrt{1 + 2V}}{V}
 \end{equation}
-Avec $V = uy_0^2$. Cependant une seul de ces solutions correspond \`a une solution physique. 
+Avec $V = uy_0^2$. Cependant une seule de ces solutions correspond \`a une solution physique. 
 Afin de l'identifier on fait tendre l'int\'eraction Coulombienne vers 0, donc $V\rightarrow 0$ et on fait un d\'eveloppement limit\'e \`a l'ordre 1 de la racine carr\'ee. Ce qui correspond au d\'eveloppementlimit\'e suivant avec a = $\frac{1}{2}$
 \begin{equation}
  (1 + x)^a = 1 + ax 
@@ -192,6 +193,7 @@ Avec
 \label{gamma} 
 	g^1(y) = 1 + y^2 \frac{dS_{XC}(y)}{dy} 
 \end{equation}
+On fait ic\`i une approximation en utilisant le $g^0$ qui est \'egal \`a 1 pour calculer $g^1$
 On combine les \'equations \ref{XC} et \ref{gamma} : 
 \begin{equation} 
 \label{XC_dev}
