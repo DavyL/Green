@@ -52,10 +52,10 @@ On peut \'ecrire l'\'equation de Green de la mani\`ere suivante:
 \label{kamoulox}
  \langle \Psi_0 | T \Psi_H (r_1, t_1) \Psi_H^\dagger (r_2, t_2) | \Psi_0 \rangle = G(\vec{r_1} t_1, \vec{r_2}  t_2)
 \end{equation}
-$Psi_H^\dagger$ et $Psi_0/rangle$ correspondent respectivement à une "destruction" et une "construction" d'un \'electron
+$\Psi_H^\dagger$ et $\Psi_0$ correspondent respectivement à une "destruction" et une "construction" d'un \'electron
 Avec $T$ la ``time-ordering function'' d\'efinie comme suit :
 \begin{equation}
- T{A(r_1)B(r_2)} := \theta(t_1 - t_2)A(r_1)B(r_2) \pm \theta(t_2 - t_1)B(r_2) A(R_1)
+ T{A(r_1)B(r_2)} := \theta(t_1 - t_2)A(r_1)B(r_2) \pm \theta(t_2 - t_1)B(r_2) A(r_1)
 \end{equation}
 Avec $\theta$ la fonction de Heaviside d\'efinie comme suit :
 
@@ -159,6 +159,7 @@ Et
 \end{equation}
 Avec $V = uy_0^2$. Cependant une seul de ces solutions correspond \`a une solution physique. 
 Afin de l'identifier on fait tendre l'int\'eraction Coulombienne vers 0, donc $V\rightarrow 0$ et on fait un d\'eveloppement limit\'e \`a l'ordre 1 de la racine carr\'ee. Ce qui correspond au d\'eveloppementlimit\'e suivant avec a = $\frac{1}{2}$
+, lorsque $x \rightarrow 0 $.
 \begin{equation}
  (1 + x)^a = 1 + ax 
 \end{equation}
@@ -173,7 +174,7 @@ Or, lorsque l'on fait tendre le potentiel Coulombien vers 0, c'est \`a dire que 
 On peut donc conclure que la solution physique de l'\'equation de Dyson est $Y_2$ lorsque $g^0(y) = 1$.
 \newline
 Cependant consid\'erer $g^0(y) = 1$ est une approximation, on va donc essayer de r\'esoudre l'\'equation de Dyson de mani\`ere plus pr\'ecise dans la section suivante
-
+COMPARER SOLUTION PHYSIQUE AVEC MATHEMATICA
 \subsection{R\'esolution de l'\'equation de Dyson avec $g^1(y)$}
 On consid\`ere dans cette section que 
 
