@@ -1,9 +1,11 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath, amssymb, graphics, setspace, breqn, graphicx}
+\usepackage{amsmath, amssymb, graphics, setspace, breqn, graphicx, biblatex}
 
 
 \title{Fonction de Green}
-\author{DAVY Leo, KAOUAH Mohammed, ABRIBAT Clement}
+\author{DAVY Leo, KAOUAH Mohammed, ABRIBAT Cl\'ement\\ 
+Tuteur : A.J. Berger\\
+\small L1 Parcours Sp\'ecial, Universit\'e Paul Sabatier, Toulouse}
 \begin{document}
 \maketitle
 \section{Photo-\'emission et fonction de Green}
@@ -67,7 +69,7 @@ Avec $\theta$ la fonction de Heaviside d\'efinie comme suit :
 
 \end{array} \right.
 \end{equation}
-Or les op\'erateurs $\Psi$ de l'\'equation \ref{kamoulox} \'etant trop compliqu\'es \`a calculer dans des syst\`emes r\'eels il est n\'ec\'essaires de simplifier la fonction de Green.
+Or les op\'erateurs $\Psi$ de l'\'equation (\ref{kamoulox}) \'etant trop compliqu\'es \`a calculer dans des syst\`emes r\'eels il est n\'ec\'essaires de simplifier la fonction de Green.
 Nous allons donc essayer de la simplifier tout en essayant de conserver un maximum de pr\'ecision dans le reste de ce rapport.
 \section{Dyson}
 \subsection{Introduction \`a l'\'equation de Dyson}
@@ -240,8 +242,6 @@ On obtient
      -\frac{1}{2} V Y^2 +\frac{1}{4} V^2 Y^4 -Y +1 = 0
 \end{equation}
 Il faut donc maintenant r\'esoudre \ref{Dyson_final}
-
-Il faut donc maintenant r\'esoudre \ref{Dyson_final}
 %
 \section{R\'esolution de l'\'equation de Dyson}
 \subsection{R\'esolution avec la m\'ethode g\'en\'erale}
@@ -265,7 +265,7 @@ L'\'equation \ref{YFinal} peut s'\'ecrire :
 \end{equation}
 Avec $a = \frac{1}{4}V^2$,$b = 0$, $c=\frac{-1}{2}V$, $d = -1$, $e=1$ .
 \newline
-On va donc calculer $\Delta$ afin d'identifier la forme des solutions.
+On va donc calculer le discriminant $\Delta$ afin d'identifier la forme des solutions.
 \begin{align*}
 \label{Delta}
  \Delta = 256a^3 e^3 - 192 a^2bde^2 - 128 a^2 c^2 e^2 + 144a^2cd^2e - 27a^2d^4\\ 
